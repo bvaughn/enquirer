@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const colors = require('ansi-colors');
-const HorizontalSelect = require('./HorizontalSelect');
+const colors = require("ansi-colors");
+const HorizontalSelect = require("./HorizontalSelect");
 
 class HorizontalMultiSelect extends HorizontalSelect {
   constructor(options) {

@@ -55,7 +55,6 @@ Changelog entries are classified using the following labels _(from [keep-a-chang
 
 - Updated typings to use `EventEmitter` class from `events` directly due to changes in `@types/node`.
 
-
 ## 2.3.3 - 2020-01-13
 
 ### Added
@@ -96,7 +95,7 @@ Changelog entries are classified using the following labels _(from [keep-a-chang
 
 ### Fixed
 
-- Several improvements were made for handling custom `format`, `result` and `initial` functions defined on the options. 
+- Several improvements were made for handling custom `format`, `result` and `initial` functions defined on the options.
 
 ## 2.0.7 - 2018-11-14
 
@@ -110,7 +109,7 @@ Changelog entries are classified using the following labels _(from [keep-a-chang
 - Adds support for `options.required` on all prompts. Uses the built-in `validate()` function, allowing this functionality to be overridden or customized.
 - Adds support for `options.scroll` to disable scrolling in array prompts.
 - Adds support for `options.onRun`, which is called when `prompt.run()` is called, after the readline instance is created.
-- Adds support for `options.history` on the `Input` and `Text` prompts. 
+- Adds support for `options.history` on the `Input` and `Text` prompts.
 - Adds support for `options.term` to set the terminal, thanks to [@tunnckoCore](https://github.com/tunnckoCore). At the moment this is only used in a couple of edge cases with the `Survey` and `Scale` prompts to check if the terminal is Hyper.
 - `options.skip` may now be a Boolean, thanks to [@tunnckoCore](https://github.com/tunnckoCore)
 
@@ -120,7 +119,7 @@ Changelog entries are classified using the following labels _(from [keep-a-chang
 
 Enquire 2.0 is a bottom-up complete re-write:
 
-- Several prompts that were previously published as individual packages will be included in Enquirer itself. 
+- Several prompts that were previously published as individual packages will be included in Enquirer itself.
 - Why? - As users, we didn't like having to add commonly-used prompts as plugins. Enquirer 2.0 will still support custom prompts as plugins, but many prompts will also be built-in.
 - Enquirer will only have a single dependency, https://github.com/doowb/ansi-colors, which itself has no other dependencies). This will make Enquirer easier to maintain and faster for users.
 - Methods for registering "questions" have been removed. While it was nice to be able to preregister questions that could be called upon later, this is something that is better left to implementors, as it's relatively trivial to do with custom code.
@@ -128,8 +127,7 @@ Enquire 2.0 is a bottom-up complete re-write:
 
 ### Added
 
-- Many prompts that were previously separate packages are now bundled into Enquirer itself. 
-
+- Many prompts that were previously separate packages are now bundled into Enquirer itself.
 
 [Unreleased]: https://github.com/enquirer/enquirer/compare/2.0.2...HEAD
 [keep-a-changelog]: https://github.com/olivierlacan/keep-a-changelog

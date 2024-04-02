@@ -13,16 +13,8 @@ interface BasePromptOptions {
   result?(value: string): string | Promise<string>;
   skip?: ((state: object) => boolean | Promise<boolean>) | boolean;
   validate?(value: string): boolean | string | Promise<boolean | string>;
-  onSubmit?(
-    name: string,
-    value: any,
-    prompt: Enquirer.Prompt
-  ): boolean | Promise<boolean>;
-  onCancel?(
-    name: string,
-    value: any,
-    prompt: Enquirer.Prompt
-  ): boolean | Promise<boolean>;
+  onSubmit?(name: string, value: any, prompt: Enquirer.Prompt): boolean | Promise<boolean>;
+  onCancel?(name: string, value: any, prompt: Enquirer.Prompt): boolean | Promise<boolean>;
   stdin?: typeof process.stdin;
   stdout?: typeof process.stdout;
 }
@@ -122,17 +114,12 @@ declare class Enquirer<T = object> extends EventEmitter {
    * @param type
    * @param fn `Prompt` class, or a function that returns a `Prompt` class.
    */
-  register(
-    type: string,
-    fn: typeof BasePrompt | (() => typeof BasePrompt)
-  ): this;
+  register(type: string, fn: typeof BasePrompt | (() => typeof BasePrompt)): this;
 
   /**
    * Register a custom prompt type.
    */
-  register(type: {
-    [key: string]: typeof BasePrompt | (() => typeof BasePrompt);
-  }): this;
+  register(type: { [key: string]: typeof BasePrompt | (() => typeof BasePrompt) }): this;
 
   /**
    * Prompt function that takes a "question" object or array of question objects,

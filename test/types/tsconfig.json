@@ -3,6 +3,6 @@
     "target": "es2017",
     "module": "commonjs",
     "noEmit": true,
-    "strict": true
-  }
+    "strict": true,
+  },
 }

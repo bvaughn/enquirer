@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-const assert = require('assert');
-const Events = require('events');
-const utils = require('./lib/utils');
+const assert = require("assert");
+const Events = require("events");
+const utils = require("./lib/utils");
 
 /**
  * Create an instance of `Enquirer`.
@@ -45,7 +45,7 @@ class Enquirer extends Events {
       return this;
     }
 
-    assert.equal(typeof fn, 'function', 'expected a function');
+    assert.equal(typeof fn, "function", "expected a function");
     const name = type.toLowerCase();
 
     if (fn.prototype instanceof this.Prompt) {
@@ -81,7 +81,7 @@ class Enquirer extends Events {
   async prompt(questions = []) {
     for (let question of [].concat(questions)) {
       try {
-        if (typeof question === 'function') question = await question.call(this);
+        if (typeof question === "function") question = await question.call(this);
         await this.ask(utils.merge({}, this.options, question));
       } catch (err) {
         return Promise.reject(err);
@@ -91,7 +91,7 @@ class Enquirer extends Events {
   }
 
   async ask(question) {
-    if (typeof question === 'function') {
+    if (typeof question === "function") {
       question = await question.call(this);
     }
 
@@ -99,12 +99,12 @@ class Enquirer extends Events {
     let { type, name } = question;
     let { set, get } = utils;
 
-    if (typeof type === 'function') {
+    if (typeof type === "function") {
       type = await type.call(this, question, this.answers);
     }
 
     if (!type) return this.answers[name];
-    if (type === 'number') type = 'numeral';
+    if (type === "number") type = "numeral";
 
     assert(this.prompts[type], `Prompt "${type}" is not registered`);
 
@@ -115,8 +115,8 @@ class Enquirer extends Events {
     prompt.enquirer = this;
 
     if (name) {
-      prompt.on('submit', value => {
-        this.emit('answer', name, value, prompt);
+      prompt.on("submit", value => {
+        this.emit("answer", name, value, prompt);
         set(this.answers, name, value);
       });
     }
@@ -128,13 +128,13 @@ class Enquirer extends Events {
       return emit(...args);
     };
 
-    this.emit('prompt', prompt, this);
+    this.emit("prompt", prompt, this);
 
     if (opts.autofill && value != null) {
       prompt.value = prompt.input = value;
 
       // if "autofill=show" render the prompt, otherwise stay "silent"
-      if (opts.autofill === 'show') {
+      if (opts.autofill === "show") {
         await prompt.submit();
       }
     } else {
@@ -181,15 +181,15 @@ class Enquirer extends Events {
     this._Prompt = value;
   }
   static get Prompt() {
-    return this._Prompt || require('./lib/prompt');
+    return this._Prompt || require("./lib/prompt");
   }
 
   static get prompts() {
-    return require('./lib/prompts');
+    return require("./lib/prompts");
   }
 
   static get types() {
-    return require('./lib/types');
+    return require("./lib/types");
   }
 
   /**
@@ -245,10 +245,10 @@ const define = name => {
   utils.defineExport(Enquirer, name, () => Enquirer.types[name]);
 };
 
-define('ArrayPrompt');
-define('AuthPrompt');
-define('BooleanPrompt');
-define('NumberPrompt');
-define('StringPrompt');
+define("ArrayPrompt");
+define("AuthPrompt");
+define("BooleanPrompt");
+define("NumberPrompt");
+define("StringPrompt");
 
 module.exports = Enquirer;
