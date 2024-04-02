@@ -1,17 +1,7 @@
 {
-  "name": "enquirer",
-  "description": "Stylish, intuitive and user-friendly prompt system. Fast and lightweight enough for small projects, powerful and extensible enough for the most advanced use cases.",
-  "version": "2.4.1",
-  "homepage": "https://github.com/enquirer/enquirer",
-  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "contributors": [
-    "Brian Woodward (https://twitter.com/doowb)",
-    "Jon Schlinkert (http://twitter.com/jonschlinkert)"
-  ],
-  "repository": "enquirer/enquirer",
-  "bugs": {
-    "url": "https://github.com/enquirer/enquirer/issues"
-  },
+  "name": "@bvaughn/enquirer",
+  "description": "Fork of enquirer/enquirer with a few bug fixes",
+  "version": "1.0.0",
   "license": "MIT",
   "files": [
     "index.js",
