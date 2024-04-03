@@ -1,7 +1,7 @@
 {
-  "name": "enquirer",
-  "description": "Fork of enquirer/enquirer with a few bug fixes",
-  "version": "2.4.1",
+  "name": "@bvaughn/enquirer",
+  "description": "Fork of enquirer/enquirer with some bug fixes and UX changes",
+  "version": "2.4.2",
   "license": "MIT",
   "files": [
     "index.js",
