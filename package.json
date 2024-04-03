@@ -1,5 +1,5 @@
 {
-  "name": "@bvaughn/enquirer",
+  "name": "bvaughn-enquirer",
   "description": "Fork of enquirer/enquirer with some bug fixes and UX changes",
   "version": "2.4.2",
   "license": "MIT",
