@@ -1,7 +1,7 @@
 {
   "name": "enquirer",
   "description": "Fork of enquirer/enquirer with a few bug fixes",
-  "version": "1.0.0",
+  "version": "2.4.1",
   "license": "MIT",
   "files": [
     "index.js",
